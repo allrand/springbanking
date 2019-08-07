@@ -22,7 +22,7 @@
     <script type="text/javascript" src="<%=basePath%>weui/lib/fastclick.js"></script>
 </head>
 <body>
-hi boy ${name}!
+    <span>${name}!</span>
 
     <form id="form-edit">
         <div>
