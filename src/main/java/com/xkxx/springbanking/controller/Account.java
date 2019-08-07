@@ -5,8 +5,12 @@ import com.xkxx.springbanking.bean.ShoppingCart;
 import com.xkxx.springbanking.entity.Customer;
 import com.xkxx.springbanking.entity.LoginInfo;
 import com.xkxx.springbanking.entity.OrderInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.Serializable;
 
@@ -31,13 +35,23 @@ public class Account implements Serializable {
     private LoginInfo loginInfo;
     private OrderInfo orderInfo;
 
+    private Logger log = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private CustomerMgr login;
 
     @Autowired
     private ShoppingCart shoppingCart;
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        log.debug("/login get");
+        return Account.ACTION_LOGIN;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String performAccount(){
+        log.debug("/login post");
         if (customer == null || loginInfo == null){
             checkingOut = false;
             loginInfo = new LoginInfo();

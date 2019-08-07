@@ -61,6 +61,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login"/>
             <bean class="com.xkxx.springbanking.interceptor.RequestInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
@@ -96,7 +97,6 @@
 <!--        <property name="formView">-->
 <!--            <value>login</value>-->
 <!--        </property>-->
-
 <!--    </bean>-->
 
 
