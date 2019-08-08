@@ -24,7 +24,6 @@
 
 <div class="header"><h1 style="text-align: center;color: #515151;">管理平台</h1></div>
 <div class="loginWraper img_size">
-    <%--<img src="http://images2015.cnblogs.com/blog/561794/201603/561794-20160310002800647-50077395.jpg" width="100%"/>--%>
     <div id="loginform" class="loginBox">
         <form class="form form-horizontal" action="<%=basePath%>login" method="post">
             <%--<form class="form form-horizontal" action="<%=basePath%>loginByAuth.html" method="post">--%>
